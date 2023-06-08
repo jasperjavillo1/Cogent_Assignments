@@ -1,4 +1,4 @@
-package cogent.homework.date_6_7;
+package cogent.homework.assignment1;
 
 public class Test {
 
