@@ -1,5 +1,8 @@
 package com.cogent.spring;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Address {
 	int aid;
 	String name;
