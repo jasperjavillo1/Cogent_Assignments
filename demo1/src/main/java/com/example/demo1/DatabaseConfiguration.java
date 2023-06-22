@@ -1,13 +1,18 @@
 package com.example.demo1;
 
 import javax.sql.DataSource;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.stereotype.Component;
 
-@ConfigurationProperties(prefix = "default")
+//@ConfigurationProperties(prefix = "default")
 @Component
 public class DatabaseConfiguration {
+	@Autowired
+	DataSource ds;
 	private String url;
 	private String username;
 	private String password;
@@ -46,7 +51,6 @@ public class DatabaseConfiguration {
 		this.driver = driver;
 	}
 	
-	/*
 	public DataSource getDataSource()
 	{
 		DriverManagerDataSource dm = new DriverManagerDataSource();
@@ -56,7 +60,6 @@ public class DatabaseConfiguration {
 		dm.setPassword(password);
 		return dm;
 	}
-	*/
 	
 	
 }

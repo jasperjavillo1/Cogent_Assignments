@@ -52,6 +52,16 @@ public class UserController {
 			return "User not inserted";
 	}
 	
+	@DeleteMapping(value = "/updateUser/{id}")
+	public String update(@PathVariable int id) throws IOException, SQLException, ClassNotFoundException
+	{
+		//DataSource ds = (DataSource)(dbconfig.getDataSource());
+		if(user.deleteUser(id))
+			return "User deleted";
+		else
+			return "User not deleted";
+	}
+	
 	@GetMapping(value ="/getUsers")
 	public ArrayList<User> getUser() throws IOException, ClassNotFoundException, SQLException
 	{
