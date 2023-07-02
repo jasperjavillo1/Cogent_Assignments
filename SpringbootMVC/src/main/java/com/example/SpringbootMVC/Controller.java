@@ -1,5 +1,6 @@
 package com.example.SpringbootMVC;
 
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -7,8 +8,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class Controller {
 	@GetMapping(path="/greet/{name}")
-	public String hello(@PathVariable String name)
+	public ModelMap hello(@PathVariable String name)
 	{
-		return "Hello " + name;
+		String message = "Hello " + name;
+		ModelMap model = new ModelMap();
+		model.addAttribute("greeting", message);
+		return model;
 	}
 }

@@ -32,7 +32,7 @@ public class UserController {
 	@Autowired UserDAO user;
 	
 	
-	@PostMapping(value = "/{addUser}")
+	@PostMapping(value = "/addUser/{addUser}")
 	public String create(@ModelAttribute User user1) throws IOException, SQLException, ClassNotFoundException
 	{
 		//DataSource ds = (DataSource)(dbconfig.getDataSource());
@@ -42,7 +42,7 @@ public class UserController {
 			return "User not inserted";
 	}
 	
-	@PutMapping(value = "/{id}/{updateUser}")
+	@PutMapping(value = "/updateUser/{id}/{updateUser}")
 	public String update(@PathVariable int id,@ModelAttribute User user1) throws IOException, SQLException, ClassNotFoundException
 	{
 		//DataSource ds = (DataSource)(dbconfig.getDataSource());
